@@ -1,0 +1,13 @@
+.tooltip {
+    background: beige;
+    padding: 5px;
+    border: 1px solid sandybrown;
+    border-radius: 5px;
+}
+input:disabled {
+    pointer-events: none;
+}
+
+html.tooltip-probe input:disabled {
+    pointer-events: auto;
+}

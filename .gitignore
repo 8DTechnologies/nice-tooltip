@@ -1,0 +1,13 @@
+# Temporary files/OS files
+*~
+*.lock
+*.DS_Store
+*.swp
+*.out
+.gitkeep
+
+# IntelliJ files
+*.iml
+*.ipr
+*.iws
+.idea/

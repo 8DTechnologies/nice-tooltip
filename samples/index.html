@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <script src="../deps/jquery.js"></script>
+    <script src="../deps/textile.js"></script>
+    <script src="../lib/tooltip.js"></script>
+    <link rel="stylesheet" href="../lib/tooltip.css">
+    <title></title>
+    <style>
+
+        .tooltip > p:first-child {
+            margin-top: 0;
+        }
+        .tooltip > p:last-child {
+            margin-bottom: 0;
+        }
+
+
+
+    </style>
+</head>
+<body>
+    <script>
+        $.nicerTooltip({ htmlTitleProcessor: textile });
+    </script>
+
+    <div title="Outer +tooltip+">This is a sample text paragraph.<span title="Inner -tooltip-">This is a special paragraph.</span></div>
+    <div>This is another test paragraph.</div>
+    <input type="button" disabled="disabled" value="Test" title="Disabled button"></input>
+    <div>
+    <svg width="500" height="500"><circle x="250" y="250" r="123" fill="red" title="This is a hidden circle"></circle></svg>
+    </div>
+</body>
+</html>

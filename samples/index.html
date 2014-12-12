@@ -22,14 +22,41 @@
 </head>
 <body>
     <script>
-        $.nicerTooltip({ htmlTitleProcessor: textile });
+        $.nicerTooltip({ titleToHtmlProcessor: textile });
     </script>
 
     <div title="Outer +tooltip+">This is a sample text paragraph.<span title="Inner -tooltip-">This is a special paragraph.</span></div>
     <div>This is another test paragraph.</div>
-    <input type="button" disabled="disabled" value="Test" title="Disabled button"></input>
+    <input type="button" disabled="disabled" value="Test" title="Disabled button" />
     <div>
     <svg width="500" height="500"><circle x="250" y="250" r="123" fill="red" title="This is a hidden circle"></circle></svg>
     </div>
+    <div id="dynamic">
+
+    </div>
+
+
+
+    <script>
+        var stopper = function( event ) {
+                    event.stopPropagation();
+                    console.info( "propagation stopped." );
+                };
+
+        $('#test').bind( "keydown", stopper );
+        $('#test').bind( "keyup", stopper );
+        $('#test').bind( "keypressed", stopper );
+
+        $('body').bind( "keydown", function( event ) {
+            console.info( "Key hit body:", event.which );
+        });
+
+        setInterval( function() {
+            var time = new Date().getTime();
+            $('#dynamic').text( "time" ).attr( "title", time );
+        }, 200 );
+
+    </script>
+
 </body>
 </html>

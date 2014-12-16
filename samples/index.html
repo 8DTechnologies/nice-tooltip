@@ -22,7 +22,9 @@
 </head>
 <body>
     <script>
-        $.nicerTooltip({ titleToHtmlProcessor: textile });
+        $( function() {
+            $.nicerTooltip({ titleToHtmlProcessor: textile });
+        });
     </script>
 
     <div title="Outer +tooltip+">This is a sample text paragraph.<span title="Inner -tooltip-">This is a special paragraph.</span></div>
@@ -35,6 +37,9 @@
 
     </div>
 
+    <div id="dynamic2">
+
+    </div>
 
 
     <script>
@@ -54,6 +59,7 @@
         setInterval( function() {
             var time = new Date().getTime();
             $('#dynamic').text( "time" ).attr( "title", time );
+            $('#dynamic2').append( $('<div>' ).text( "append" ).attr( "title", time ) );
         }, 200 );
 
     </script>

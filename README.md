@@ -16,9 +16,7 @@ This library have the following limitations:
 Usage:
 ======
 <code>
-    <script>
-        $( function() {
-            $.nicerTooltip();
-        });
-    </script>
+    $( function() {
+        $.nicerTooltip();
+    });
 </code>

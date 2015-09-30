@@ -11,3 +11,4 @@
 *.ipr
 *.iws
 .idea/
+bower_components/
